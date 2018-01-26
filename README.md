@@ -23,7 +23,7 @@ Firstly i created layout and templates that will be later on turned to component
 my style of prototyping apps. Then i deicded i will use REDUX for this application.
 
 I had couple of ways croping image for earlier and later browsers but i chose this one beacuse task stated it should work 
-on all modern browsers so legacy support was not needed.
+on all modern browsers so legacy support was not needed. I did not use object-contain since it doesn't have IE support.
 
 Rest of the application is simply done on component mount i check if there is local.storage item and i display them. I made components for 
 Search, List, And Avanger (seperation of concerns)

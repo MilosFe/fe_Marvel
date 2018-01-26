@@ -1,14 +1,34 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-import {getAvengers} from './actions/actions';
+import {getAvengers, getLocalStorage} from './actions/actions';
+
 
 class Search extends Component {
 componentWillMount(){
-    // console.log(this.props);
+
+  if (localStorage.getItem("names") !== null) {
+   this.props.getLocalStorage();
+  }else {
+    var stored ={
+      0: {
+          data:{
+              results: []
+          }
+      }   
+      
+  }  
+    localStorage.setItem("names", JSON.stringify(stored));
+  }
+ 
+
 }
     getAvengers(e){
         var avengers = this.refs.avengers.value;
+        if (avengers === ''){
+         this.props.getLocalStorage();
+         return
+        }
         this.props.getAvengers(avengers);
             e.preventDefault(); 
     }
@@ -33,7 +53,8 @@ return {
 const mapToDispatch = dispatch => {
     return bindActionCreators(
       {
-        getAvengers
+        getAvengers,
+        getLocalStorage
       },
       dispatch
     );

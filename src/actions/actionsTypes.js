@@ -1,0 +1,2 @@
+export const GET_AVENGERS = 'GET_AVENGERS';
+export const RECIVE_ERROR = 'RECIVE_ERROR';

@@ -1,9 +1,14 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
+
 class Avenger extends Component {
-    componentWillMount(){
-        var x = this.props.avenger.thumbnail.path+"."+this.props.avenger.thumbnail.extension
-        console.log(x);
+    bookmark(a, e){
+      let avenger = this.props.avenger;
+      let stored = JSON.parse(localStorage.getItem("names"));
+      stored[0].data.results.push(avenger);
+      console.log(stored);
+      localStorage.setItem("names", JSON.stringify(stored));
+
     }
     render() {
       
@@ -14,7 +19,7 @@ class Avenger extends Component {
               <img src={ this.props.avenger.thumbnail.path +"."+this.props.avenger.thumbnail.extension } alt="" className="cover__img"></img>
             </div>
             <h3 className="card__name">{this.props.avenger.name}</h3>
-            <div className="card__bookmark">Bookmark</div>
+            <div className="card__bookmark" onClick={this.bookmark.bind(this)} >Bookmark</div>
           </div>
         </div>
         );

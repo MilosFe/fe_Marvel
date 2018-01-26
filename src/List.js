@@ -7,6 +7,7 @@ class List extends Component {
   render() {
     let avengers;
     if (this.props.avengers.length !== 0 ) {
+      console.log(this.props.avengers);
       avengers = this.props.avengers[0].data.results.map(function(avenger, index) {
      return    <Avenger  key={index} avenger={avenger}/>
       });

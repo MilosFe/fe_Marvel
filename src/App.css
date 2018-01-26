@@ -553,7 +553,7 @@ label {
     display: flex;
 }
 
-cover__img {
+.cover__img {
     position: absolute;
     transform: translate(-50%, -50%);
     top: 50%;

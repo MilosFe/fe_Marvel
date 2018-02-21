@@ -1,6 +1,5 @@
-import React from "react";
+import React from 'react';
 
-
-export const Footer = () => ( <footer class="footer">
-&copy; 2018. Milos Radoman. Developed as test for quantox technolgies.
-</footer>);
+export const Footer = () => (
+    <footer className="footer">& copy; 2018. Milos Radoman.Developed as test for Igor. </footer>
+);
